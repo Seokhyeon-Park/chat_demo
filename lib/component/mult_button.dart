@@ -10,8 +10,11 @@ class MultButton extends StatefulWidget {
 
 class _MultButtonState extends State<MultButton> {
   String selectedButton = 'All';
+  Color selectedColor = const Color.fromRGBO(255, 158, 170, 1.0);
+  Color unselectedColor = const Color.fromRGBO(58, 166, 185, 1.0);
 
   buttonChangeEvent(selected) {
+    // @상단 버튼(3개)에 따라 chat_list 변경되어야 함
     setState(() {
       selectedButton = selected;
     });
@@ -32,9 +35,7 @@ class _MultButtonState extends State<MultButton> {
             width: 120,
             height: 40,
             // @선택에 따라 색상 변경되게 해야함
-            color: selectedButton == 'All'
-                ? const Color.fromRGBO(255, 158, 170, 1.0)
-                : const Color.fromRGBO(58, 166, 185, 1.0),
+            color: selectedButton == 'All' ? selectedColor : unselectedColor,
           ),
           CustomButton(
             buttonChangeEvent: buttonChangeEvent,
@@ -42,9 +43,7 @@ class _MultButtonState extends State<MultButton> {
             width: 120,
             height: 40,
             // @선택에 따라 색상 변경되게 해야함
-            color: selectedButton == 'My'
-                ? const Color.fromRGBO(255, 158, 170, 1.0)
-                : const Color.fromRGBO(58, 166, 185, 1.0),
+            color: selectedButton == 'My' ? selectedColor : unselectedColor,
           ),
           CustomButton(
             buttonChangeEvent: buttonChangeEvent,
@@ -52,9 +51,7 @@ class _MultButtonState extends State<MultButton> {
             width: 120,
             height: 40,
             // @선택에 따라 색상 변경되게 해야함
-            color: selectedButton == 'Other'
-                ? const Color.fromRGBO(255, 158, 170, 1.0)
-                : const Color.fromRGBO(58, 166, 185, 1.0),
+            color: selectedButton == 'Other' ? selectedColor : unselectedColor,
           ),
         ],
       ),

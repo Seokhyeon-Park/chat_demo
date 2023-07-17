@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ChatList extends StatelessWidget {
-  const ChatList({super.key});
+class ChatRoomList extends StatelessWidget {
+  const ChatRoomList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,10 @@ class ChatList extends StatelessWidget {
                   height: 80,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
+                    // @유저 프로필 사진
                     image: DecorationImage(
                         image: NetworkImage(
-                            'https://googleflutter.com/sample_image.jpg'),
+                            'https://www.michaelpage.com.ph/sites/michaelpage.com.ph/files/2022-06/Software%20Developer.jpg'),
                         fit: BoxFit.fill),
                   ),
                 ),
@@ -37,8 +38,9 @@ class ChatList extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(bottom: 2),
+                      // @ChatRoomList 이름
                       child: Text(
-                        'Seokhyeon',
+                        'dev',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 22,
@@ -47,10 +49,11 @@ class ChatList extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 3.0),
+                      // @ChatRoomList 상태 (명)
                       child: Text(
-                        'Typing...',
+                        'online (12)',
                         style: TextStyle(
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.w300,
                           fontSize: 16,
                         ),
                       ),
@@ -81,6 +84,7 @@ class ChatList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        // @읽지 않은 Chat 수
                         Text(
                           '3',
                           style: TextStyle(
@@ -94,6 +98,7 @@ class ChatList extends StatelessWidget {
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 3.0),
+                  // @마지막 Chat 시간
                   child: Text(
                     '23.07.14 18:35',
                     style: TextStyle(

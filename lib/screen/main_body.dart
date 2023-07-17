@@ -1,4 +1,4 @@
-import 'package:chat_demo/component/chat_list.dart';
+import 'package:chat_demo/component/chat_room_list.dart';
 import 'package:chat_demo/component/mult_button.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +40,7 @@ class MainBody extends StatelessWidget {
                     ),
                   ),
                   // @ListView로 변경해야 함
-                  ChatList(),
+                  ChatRoomList(),
                 ],
               ),
             ),

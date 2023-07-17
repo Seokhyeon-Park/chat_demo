@@ -40,7 +40,22 @@ class MainBody extends StatelessWidget {
                     ),
                   ),
                   // @ListView로 변경해야 함
-                  ChatRoomList(),
+                  ChatRoomList(
+                    name: 'Dev',
+                    state: 'Joined',
+                    count: '3',
+                    date: '2023.07.17 11:49',
+                    url:
+                        'https://www.michaelpage.com.ph/sites/michaelpage.com.ph/files/2022-06/Software%20Developer.jpg',
+                  ),
+                  ChatRoomList(
+                    name: 'Playground',
+                    state: 'Unentered',
+                    count: '9+',
+                    date: '2023.07.17 13:37',
+                    url:
+                        'https://wimg.mk.co.kr/meet/neds/2017/01/image_readtop_2017_698116_15470992833069080.jpeg',
+                  ),
                 ],
               ),
             ),

@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 
 class ChatRoomList extends StatelessWidget {
   final String name;
-  final String state;
-  final String count;
-  final String date;
+  final String state; // @USER에 영향을 받음.
+  final String date; // @USER에 영향을 받음.
   final String url;
 
   const ChatRoomList({
     super.key,
     required this.name,
     required this.state,
-    required this.count,
     required this.date,
     required this.url,
   });
@@ -82,41 +80,29 @@ class ChatRoomList extends StatelessWidget {
               horizontal: 18,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 10.0),
+                //   child: Container(
+                //     width: 10,
+                //     height: 10,
+                //     decoration: const BoxDecoration(
+                //       shape: BoxShape.circle,
+                //       color: Color.fromRGBO(255, 158, 170, 1.0),
+                //     ),
+                //   ),
+                // ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 3.0),
-                  child: Container(
-                    width: 30,
-                    height: 30,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color.fromRGBO(255, 158, 170, 1.0),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // @읽지 않은 Chat 수
-                        Text(
-                          count,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 3.0),
+                  // padding: const EdgeInsets.only(top: 10.0),
+                  padding: const EdgeInsets.only(bottom: 10.0),
                   // @마지막 Chat 시간
                   child: Text(
                     date,
                     style: const TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                   ),
                 ),

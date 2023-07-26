@@ -14,7 +14,6 @@ class LoginHeader extends StatelessWidget {
             height: 120,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              // @유저 프로필 사진
               image: DecorationImage(
                 image: AssetImage('assets/images/pig.jpeg'),
                 fit: BoxFit.fill,

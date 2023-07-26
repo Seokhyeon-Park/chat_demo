@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class RoundedEventButton extends StatelessWidget {
   final String name;
   final double width;
   final double height;
   final Color color;
   final Function buttonChangeEvent;
 
-  const CustomButton({
+  const RoundedEventButton({
     super.key,
     required this.name,
     required this.width,

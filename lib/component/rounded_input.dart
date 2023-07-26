@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomInput extends StatelessWidget {
+class RoundedInput extends StatelessWidget {
   final Color mainColor;
   final Color subColor;
   final double widthPer;
   final String hint;
 
-  const CustomInput({
+  const RoundedInput({
     super.key,
     required this.mainColor,
     required this.subColor,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ChatRoomList extends StatelessWidget {
+class ChatList extends StatelessWidget {
   final String name;
   final String state; // @USER에 영향을 받음.
   final String date; // @USER에 영향을 받음.
   final String url;
 
-  const ChatRoomList({
+  const ChatList({
     super.key,
     required this.name,
     required this.state,
@@ -47,7 +47,7 @@ class ChatRoomList extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 2),
-                      // @ChatRoomList 이름
+                      // @ChatList 이름
                       child: Text(
                         name,
                         style: const TextStyle(
@@ -58,7 +58,7 @@ class ChatRoomList extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 3.0),
-                      // @ChatRoomList 상태 (명)
+                      // @ChatList 상태 (명)
                       child: Text(
                         state,
                         style: TextStyle(

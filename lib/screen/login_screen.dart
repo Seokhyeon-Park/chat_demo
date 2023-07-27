@@ -1,6 +1,5 @@
 import 'package:chat_demo/component/rounded_button.dart';
 import 'package:chat_demo/component/rounded_input.dart';
-import 'package:chat_demo/component/tap_open_button.dart';
 import 'package:chat_demo/pack/login_header.dart';
 import 'package:flutter/material.dart';
 
@@ -59,41 +58,18 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(14),
-                        child: TapOpenButton(
-                          height: 44,
-                          width: 150,
-                          color: mainColor,
-                          rounded: 30,
-                          fontSize: 19,
-                          fontColor: Colors.white,
-                          title: 'sing up',
-                        ),
-                      ),
-                      // Padding(
-                      //   padding: const EdgeInsets.all(14),
-                      //   child: RoundedEventButton(
-                      //     onTapEvent: () {},
-                      //     buttonHeight: 44,
-                      //     buttonWidth: 150,
-                      //     color: mainColor,
-                      //     fontSize: 19,
-                      //     title: 'sing up',
-                      //   ),
-                      // ),
-                      Padding(
-                        padding: const EdgeInsets.all(14),
                         child: RoundedButton(
                           buttonHeight: 44,
-                          buttonWidth: 150,
+                          buttonWidth: 80,
                           color: subColor,
                           rounded: 30,
                           fontSize: 19,
                           fontColor: Colors.white,
-                          title: 'log in',
+                          title: '● ●',
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

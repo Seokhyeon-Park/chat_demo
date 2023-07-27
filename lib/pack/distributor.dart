@@ -31,8 +31,10 @@ class _DistributorState extends State<Distributor> {
         children: [
           RoundedEventButton(
             onTapEvent: buttonChangeEvent,
-            name: 'All',
+            title: 'All',
+            rounded: 10,
             fontSize: 21,
+            fontColor: Colors.white,
             buttonWidth: 120,
             buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함
@@ -40,8 +42,10 @@ class _DistributorState extends State<Distributor> {
           ),
           RoundedEventButton(
             onTapEvent: buttonChangeEvent,
-            name: 'My',
+            title: 'My',
+            rounded: 10,
             fontSize: 21,
+            fontColor: Colors.white,
             buttonWidth: 120,
             buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함
@@ -49,8 +53,10 @@ class _DistributorState extends State<Distributor> {
           ),
           RoundedEventButton(
             onTapEvent: buttonChangeEvent,
-            name: 'Other',
+            title: 'Other',
+            rounded: 10,
             fontSize: 21,
+            fontColor: Colors.white,
             buttonWidth: 120,
             buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함

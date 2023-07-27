@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 
 class RoundedEventButton extends StatelessWidget {
   final Color color;
-  final String name;
+  final String title;
+  final double rounded;
   final double fontSize;
+  final Color fontColor;
   final double buttonWidth;
   final double buttonHeight;
   final Function onTapEvent;
 
   const RoundedEventButton({
     super.key,
-    required this.name,
+    required this.title,
     required this.color,
+    required this.rounded,
     required this.fontSize,
+    required this.fontColor,
     required this.buttonWidth,
     required this.buttonHeight,
     required this.onTapEvent,
@@ -23,21 +27,21 @@ class RoundedEventButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(rounded),
         ),
         shadowColor: Colors.transparent,
         backgroundColor: color,
         fixedSize: Size(buttonWidth, buttonHeight),
       ),
       onPressed: () {
-        (name == 'All' || name == 'My' || name == 'Other')
-            ? onTapEvent(name)
+        (title == 'All' || title == 'My' || title == 'Other')
+            ? onTapEvent(title)
             : onTapEvent();
       },
       child: Text(
-        name,
+        title,
         style: TextStyle(
-          color: Colors.white,
+          color: fontColor,
           fontSize: fontSize,
           fontWeight: FontWeight.w500,
         ),

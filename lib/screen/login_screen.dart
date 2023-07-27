@@ -1,4 +1,5 @@
 import 'package:chat_demo/component/rounded_button.dart';
+import 'package:chat_demo/component/rounded_event_button.dart';
 import 'package:chat_demo/component/rounded_input.dart';
 import 'package:chat_demo/pack/login_header.dart';
 import 'package:flutter/material.dart';
@@ -58,12 +59,13 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(14),
-                        child: RoundedButton(
+                        child: RoundedEventButton(
+                          onTapEvent: () {},
                           buttonHeight: 44,
                           buttonWidth: 150,
-                          mainColor: mainColor,
+                          color: mainColor,
                           fontSize: 19,
-                          title: 'sing up',
+                          name: 'sing up',
                         ),
                       ),
                       Padding(
@@ -71,9 +73,9 @@ class LoginScreen extends StatelessWidget {
                         child: RoundedButton(
                           buttonHeight: 44,
                           buttonWidth: 150,
-                          mainColor: subColor,
+                          color: subColor,
                           fontSize: 19,
-                          title: 'log in',
+                          name: 'log in',
                         ),
                       ),
                     ],

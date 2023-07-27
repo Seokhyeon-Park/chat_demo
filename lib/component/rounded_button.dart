@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
-  final Color mainColor;
+  final Color color;
+  final String name;
   final double fontSize;
-  final String title;
   final double buttonWidth;
   final double buttonHeight;
 
   const RoundedButton({
     super.key,
-    required this.mainColor,
+    required this.name,
+    required this.color,
     required this.fontSize,
-    required this.title,
     required this.buttonWidth,
     required this.buttonHeight,
   });
@@ -24,12 +24,12 @@ class RoundedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         shadowColor: Colors.transparent,
-        backgroundColor: mainColor,
+        backgroundColor: color,
         fixedSize: Size(buttonWidth, buttonHeight),
       ),
       onPressed: () {},
       child: Text(
-        title,
+        name,
         style: TextStyle(
           color: Colors.white,
           fontSize: fontSize,

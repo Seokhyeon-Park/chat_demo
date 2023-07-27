@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class RoundedEventButton extends StatelessWidget {
-  final String name;
-  final double width;
-  final double height;
   final Color color;
-  final Function buttonChangeEvent;
+  final String name;
+  final double fontSize;
+  final double buttonWidth;
+  final double buttonHeight;
+  final Function onTapEvent;
 
   const RoundedEventButton({
     super.key,
     required this.name,
-    required this.width,
-    required this.height,
     required this.color,
-    required this.buttonChangeEvent,
+    required this.fontSize,
+    required this.buttonWidth,
+    required this.buttonHeight,
+    required this.onTapEvent,
   });
 
   @override
@@ -25,16 +27,18 @@ class RoundedEventButton extends StatelessWidget {
         ),
         shadowColor: Colors.transparent,
         backgroundColor: color,
-        fixedSize: Size(width, height),
+        fixedSize: Size(buttonWidth, buttonHeight),
       ),
       onPressed: () {
-        buttonChangeEvent(name);
+        (name == 'All' || name == 'My' || name == 'Other')
+            ? onTapEvent(name)
+            : onTapEvent();
       },
       child: Text(
         name,
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.white,
-          fontSize: 21,
+          fontSize: fontSize,
           fontWeight: FontWeight.w500,
         ),
       ),

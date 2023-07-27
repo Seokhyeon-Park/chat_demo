@@ -30,26 +30,29 @@ class _DistributorState extends State<Distributor> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RoundedEventButton(
-            buttonChangeEvent: buttonChangeEvent,
+            onTapEvent: buttonChangeEvent,
             name: 'All',
-            width: 120,
-            height: 40,
+            fontSize: 21,
+            buttonWidth: 120,
+            buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함
             color: selectedButton == 'All' ? selectedColor : unselectedColor,
           ),
           RoundedEventButton(
-            buttonChangeEvent: buttonChangeEvent,
+            onTapEvent: buttonChangeEvent,
             name: 'My',
-            width: 120,
-            height: 40,
+            fontSize: 21,
+            buttonWidth: 120,
+            buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함
             color: selectedButton == 'My' ? selectedColor : unselectedColor,
           ),
           RoundedEventButton(
-            buttonChangeEvent: buttonChangeEvent,
+            onTapEvent: buttonChangeEvent,
             name: 'Other',
-            width: 120,
-            height: 40,
+            fontSize: 21,
+            buttonWidth: 120,
+            buttonHeight: 40,
             // @선택에 따라 색상 변경되게 해야함
             color: selectedButton == 'Other' ? selectedColor : unselectedColor,
           ),

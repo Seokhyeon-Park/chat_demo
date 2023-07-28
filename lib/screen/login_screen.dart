@@ -44,7 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                   color: mainColor,
                 ),
-                child: const LoginHeader(),
+                child: const LoginHeader(
+                  title: 'Honeypig Kaizoku',
+                ),
               ),
             ),
             Flexible(
@@ -60,6 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainColor: mainColor,
                       subColor: subColor,
                       widthPer: 0.85,
+                      inputType: TextInputType.text,
                       encrypt: false,
                       hint: 'ID',
                     ),
@@ -71,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainColor: mainColor,
                       subColor: subColor,
                       widthPer: 0.85,
+                      inputType: TextInputType.text,
                       encrypt: true,
                       hint: 'PW',
                     ),

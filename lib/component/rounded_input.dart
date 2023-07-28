@@ -7,6 +7,7 @@ class RoundedInput extends StatefulWidget {
   final String hint;
   final bool encrypt;
   final Function returnText;
+  final TextInputType inputType;
 
   const RoundedInput({
     super.key,
@@ -16,6 +17,7 @@ class RoundedInput extends StatefulWidget {
     required this.hint,
     required this.encrypt,
     required this.returnText,
+    required this.inputType,
   });
 
   @override
@@ -36,6 +38,7 @@ class _RoundedInputState extends State<RoundedInput> {
     return SizedBox(
       width: MediaQuery.of(context).size.width * widget.widthPer,
       child: TextField(
+        keyboardType: widget.inputType,
         obscureText: widget.encrypt,
         onChanged: (text) {
           widget.returnText(text);

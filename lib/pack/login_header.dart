@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoginHeader extends StatelessWidget {
-  const LoginHeader({super.key});
+  final String title;
+  const LoginHeader({
+    required this.title,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +25,11 @@ class LoginHeader extends StatelessWidget {
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 20),
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
           child: Text(
-            'Honeypig Kaizoku',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w700,
               color: Colors.white,

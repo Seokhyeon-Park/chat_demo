@@ -1,6 +1,7 @@
-import 'package:chat_demo/component/rounded_button.dart';
+import 'package:chat_demo/component/rounded_event_button.dart';
 import 'package:chat_demo/component/rounded_input.dart';
 import 'package:chat_demo/pack/login_header.dart';
+import 'package:chat_demo/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -58,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(14),
-                        child: RoundedButton(
+                        child: RoundedEventButton(
                           buttonHeight: 44,
                           buttonWidth: 80,
                           color: subColor,
@@ -66,6 +67,10 @@ class LoginScreen extends StatelessWidget {
                           fontSize: 19,
                           fontColor: Colors.white,
                           title: '● ●',
+                          onTapEvent: () {
+                            Navigator.of(context)
+                                .push(_createRoute(const MainScreen()));
+                          },
                         ),
                       ),
                     ],
@@ -78,4 +83,25 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+Route _createRoute(page) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => page,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = const Offset(0.0, 1.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+      var curveTween = CurveTween(curve: curve);
+
+      var tween = Tween(begin: begin, end: end).chain(curveTween);
+
+      var offsetAnimation = animation.drive(tween);
+
+      return SlideTransition(
+        position: offsetAnimation,
+        child: child,
+      );
+    },
+  );
 }

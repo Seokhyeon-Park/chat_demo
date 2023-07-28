@@ -2,10 +2,27 @@ import 'package:chat_demo/component/rounded_event_button.dart';
 import 'package:chat_demo/component/rounded_input.dart';
 import 'package:chat_demo/pack/login_header.dart';
 import 'package:chat_demo/screen/main_screen.dart';
+import 'package:chat_demo/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var userId = '';
+  var userPw = '';
+
+  getId(id) {
+    userId = id;
+  }
+
+  getPw(pw) {
+    userPw = pw;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +56,22 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 22.0),
                     child: RoundedInput(
+                      returnText: getId,
                       mainColor: mainColor,
                       subColor: subColor,
                       widthPer: 0.85,
+                      encrypt: false,
                       hint: 'ID',
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 22.0),
                     child: RoundedInput(
+                      returnText: getPw,
                       mainColor: mainColor,
                       subColor: subColor,
                       widthPer: 0.85,
+                      encrypt: true,
                       hint: 'PW',
                     ),
                   ),
@@ -68,8 +89,23 @@ class LoginScreen extends StatelessWidget {
                           fontColor: Colors.white,
                           title: '● ●',
                           onTapEvent: () {
-                            Navigator.of(context)
-                                .push(_createRoute(const MainScreen()));
+                            if (userId == '' && userPw == '') {
+                              Navigator.of(context).push(
+                                _createRoute(
+                                  SignUpScreen(
+                                    mainColor: mainColor,
+                                    subColor: subColor,
+                                  ),
+                                ),
+                              );
+                            } else {
+                              // @ID/PW 확인
+                              Navigator.of(context).push(
+                                _createRoute(
+                                  const MainScreen(),
+                                ),
+                              );
+                            }
                           },
                         ),
                       ),

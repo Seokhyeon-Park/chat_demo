@@ -3,14 +3,49 @@ import 'dart:convert';
 
 class Network {
   final String url;
-  Network(this.url);
+  final String userId;
+  final String userPw;
+  final int userWeight;
+  final String userName;
 
-  Future<dynamic> getJsonData() async {
-    http.Response response = await http.get(Uri.parse(url));
+  Network(
+    this.url,
+    this.userId,
+    this.userPw,
+    this.userName,
+    this.userWeight,
+  );
 
-    var userJson = response.body;
-    var parsingData = jsonDecode(userJson);
+  Future<dynamic> createAccount() async {
+    final Map<String, dynamic> userData = {
+      'ID': userId,
+      'PW': userPw,
+      'NAME': userName,
+      'WEIGHT': userWeight,
+    };
 
-    return parsingData;
+    final headers = {
+      'Content-Type': 'application/json',
+    };
+
+    try {
+      http.Response response = await http.post(
+        Uri.parse(url),
+        headers: headers,
+        body: jsonEncode(userData),
+      );
+
+      if (response.statusCode == 200) {
+        // If the server returns a 200 OK response, parse the JSON data and return it.
+        var parsingData = jsonDecode(response.body);
+        return parsingData;
+      } else {
+        // If the server did not return a 200 OK response, throw an error.
+        throw Exception('Failed to create account');
+      }
+    } catch (e) {
+      // If there is an error in the request, throw an exception.
+      throw Exception('Failed to create account: $e');
+    }
   }
 }

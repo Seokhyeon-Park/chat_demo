@@ -1,5 +1,6 @@
 import 'package:chat_demo/component/rounded_event_button.dart';
 import 'package:chat_demo/component/rounded_input.dart';
+import 'package:chat_demo/other/network.dart';
 import 'package:chat_demo/pack/login_header.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
@@ -176,9 +177,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontSize: 19,
                           fontColor: Colors.white,
                           title: '● ●',
-                          onTapEvent: () {
+                          onTapEvent: () async {
                             // if 정상적으로 작성 및 가입이 된 경우.
-                            Navigator.pop(context);
+                            const url = 'http://localhost:8000/account/create';
+
+                            Network network = Network(
+                              url,
+                              userId,
+                              userPw,
+                              userName,
+                              userWeight,
+                            );
+
+                            var apiResult = await network.createAccount();
+
+                            print(apiResult);
+
+                            // Navigator.pop(context);
                           },
                         ),
                       ),

@@ -178,7 +178,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontColor: Colors.white,
                           title: '● ●',
                           onTapEvent: () async {
-                            // if 정상적으로 작성 및 가입이 된 경우.
                             const url = 'http://localhost:8000/account/create';
 
                             Network network = Network(
@@ -191,9 +190,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                             var apiResult = await network.createAccount();
 
-                            print(apiResult);
-
-                            // Navigator.pop(context);
+                            if (apiResult) {
+                              if (!mounted) return;
+                              Navigator.pop(context);
+                            }
                           },
                         ),
                       ),

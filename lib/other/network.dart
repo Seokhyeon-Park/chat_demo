@@ -1,6 +1,16 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+// SAMPLE
+// class WebtoonModel {
+//   late final String title, thumb, id;
+
+//   WebtoonModel.fromJson(Map<String, dynamic> json)
+//       : title = json['title'],
+//         thumb = json['thumb'],
+//         id = json['id'];
+// }
+
 class Network {
   final String url;
   final String userId;
@@ -38,7 +48,7 @@ class Network {
       if (response.statusCode == 200) {
         // If the server returns a 200 OK response, parse the JSON data and return it.
         var parsingData = jsonDecode(response.body);
-        return parsingData;
+        return parsingData['result'];
       } else {
         // If the server did not return a 200 OK response, throw an error.
         throw Exception('Failed to create account');
